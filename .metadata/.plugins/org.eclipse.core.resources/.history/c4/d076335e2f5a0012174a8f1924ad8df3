@@ -1,0 +1,10 @@
+package com.cummins.project734.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SearchResult {
+	int frequency;
+	List<String> records = new ArrayList<String>();
+	
+}

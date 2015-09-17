@@ -1,0 +1,251 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.tigris.subversion.subclipse.core,1.6.18,"org.tigris.subversion.subclipse.core",1364024901601
+started,bundle,com.collabnet.subversion.merge,2.2.4,"com.collabnet.subversion.merge",1364024902736
+started,bundle,org.eclipse.compare,3.5.100.I20100526-0800,"org.eclipse.compare",1364024903087
+started,bundle,org.tigris.subversion.subclipse.ui,1.6.18,"org.tigris.subversion.subclipse.ui",1364024904065
+started,bundle,org.springframework.ide.eclipse.webflow.ui,2.7.2.201109122348-RELEASE,"org.springframework.ide.eclipse.webflow.ui",1364024905185
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364024905260
+activated,editor,org.eclipse.jdt.ui,3.6.0.v20100602-1600,"org.eclipse.jdt.ui.CompilationUnitEditor",1364024908783
+closed,editor,com.springsource.sts.ide.ui,2.7.2.201109131000-RELEASE,"com.springsource.sts.internal.ide.ui.editors.MultiPageDashboardEditor",1364024908795
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364024909563
+started,bundle,org.springframework.ide.eclipse.webflow.core,2.7.2.201109122348-RELEASE,"org.springframework.ide.eclipse.webflow.core",1364024922778
+started,bundle,org.springframework.ide.eclipse.uaa,2.7.2.201109122348-RELEASE,"org.springframework.ide.eclipse.uaa",1364024955416
+started,bundle,org.tigris.subversion.subclipse.tools.usage,1.0.1,"org.tigris.subversion.subclipse.tools.usage",1364024955447
+started,bundle,org.eclipse.m2e.core,1.0.0.20110607-2117,"org.eclipse.m2e.core",1364024986900
+started,bundle,org.eclipse.m2e.jdt,1.0.0.20110607-2117,"org.eclipse.m2e.jdt",1364024987061
+started,bundle,org.eclipse.pde.core,3.6.2.v20110210_r362,"org.eclipse.pde.core",1364024989199
+error,log,,,"Unable to update index for central|http://repo1.maven.org/maven2",1364025001649
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025066036
+activated,view,org.eclipse.ui.navigator.resources,3.4.200.I20100601-0800,"org.eclipse.ui.navigator.ProjectExplorer",1364025071492
+started,bundle,org.eclipse.jst.ws.jaxws.dom.integration,1.0.0.v201004171919,"org.eclipse.jst.ws.jaxws.dom.integration",1364025071523
+started,bundle,org.eclipse.jst.ws.jaxws.dom.ui,1.0.0.v201004171919,"org.eclipse.jst.ws.jaxws.dom.ui",1364025071542
+error,log,,,"Unhandled event loop exception",1364025074958
+error,log,,,"Error occurred during status handling",1364025076096
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025076099
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025076616
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025080848
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025104838
+error,log,,,"Unhandled event loop exception",1364025109261
+error,log,,,"Error occurred during status handling",1364025109266
+error,log,,,"Unhandled event loop exception",1364025111689
+error,log,,,"Error occurred during status handling",1364025111694
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025111697
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025121178
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025121844
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025124140
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025128591
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025145952
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025147003
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025152070
+error,log,,,"Unhandled event loop exception",1364025157562
+error,log,,,"Error occurred during status handling",1364025157567
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025160764
+error,log,,,"An internal error occurred during: ""Periodic workspace save."".",1364025277720
+error,log,,,"Error occurred during status handling",1364025277730
+error,log,,,"An internal error occurred during: ""Periodic workspace save."".",1364025277737
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025408486
+error,log,,,"Unhandled event loop exception",1364025416769
+error,log,,,"Error occurred during status handling",1364025416785
+error,log,,,"Unhandled event loop exception",1364025419631
+error,log,,,"Error occurred during status handling",1364025419642
+error,log,,,"Unhandled event loop exception",1364025443135
+error,log,,,"Error occurred during status handling",1364025443142
+error,log,,,"Unhandled event loop exception",1364025446028
+error,log,,,"Error occurred during status handling",1364025446037
+error,log,,,"Unhandled event loop exception",1364025449000
+error,log,,,"Error occurred during status handling",1364025449008
+error,log,,,"Unhandled event loop exception",1364025451888
+error,log,,,"Error occurred during status handling",1364025451895
+error,log,,,"Unhandled event loop exception",1364025454832
+error,log,,,"Error occurred during status handling",1364025454840
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025454843
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025578670
+error,log,,,"Unhandled event loop exception",1364025583626
+error,log,,,"Error occurred during status handling",1364025583631
+error,log,,,"Unhandled event loop exception",1364025585634
+error,log,,,"Error occurred during status handling",1364025585639
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025587176
+activated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025732834
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025734864
+error,log,,,"Error occurred during status handling",1364025734869
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025734869
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025736927
+error,log,,,"Error occurred during status handling",1364025736932
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025736932
+activated,editor,org.eclipse.jdt.ui,3.6.0.v20100602-1600,"org.eclipse.jdt.ui.CompilationUnitEditor",1364025738403
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025738986
+error,log,,,"Error occurred during status handling",1364025738991
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025738991
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025743251
+error,log,,,"Unhandled event loop exception",1364025743256
+error,log,,,"Error occurred during status handling",1364025743262
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025743262
+error,log,,,"Error occurred during status handling",1364025744380
+deactivated,workbench,org.eclipse.ui.workbench,3.6.0.I20100603-1100,"",1364025745378
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025745382
+error,log,,,"Error occurred during status handling",1364025745387
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025745387
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025747615
+error,log,,,"Error occurred during status handling",1364025747620
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025747620
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025749830
+error,log,,,"Error occurred during status handling",1364025749842
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025749842
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025752046
+error,log,,,"Error occurred during status handling",1364025752052
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025752052
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025754382
+error,log,,,"Error occurred during status handling",1364025754389
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025754389
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025756326
+error,log,,,"Error occurred during status handling",1364025756341
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025756341
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025758106
+error,log,,,"Error occurred during status handling",1364025758121
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025758121
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025759894
+error,log,,,"Error occurred during status handling",1364025759908
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025759908
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025761686
+error,log,,,"Error occurred during status handling",1364025761704
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025761704
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025763426
+error,log,,,"Error occurred during status handling",1364025763437
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025763437
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025765664
+error,log,,,"Error occurred during status handling",1364025765668
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025765668
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025767719
+error,log,,,"Error occurred during status handling",1364025767728
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025767728
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025769771
+error,log,,,"Error occurred during status handling",1364025769775
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025769775
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025771826
+error,log,,,"Error occurred during status handling",1364025771831
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025771831
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025773797
+error,log,,,"Error occurred during status handling",1364025773805
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025773805
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025775624
+error,log,,,"Error occurred during status handling",1364025775628
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025775628
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025777354
+error,log,,,"Error occurred during status handling",1364025777358
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025777358
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025779107
+error,log,,,"Error occurred during status handling",1364025779111
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025779111
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025780879
+error,log,,,"Error occurred during status handling",1364025780883
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025780883
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025782643
+error,log,,,"Error occurred during status handling",1364025782649
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025782649
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025784521
+error,log,,,"Error occurred during status handling",1364025784525
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025784525
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025786293
+error,log,,,"Error occurred during status handling",1364025786298
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025786298
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025788040
+error,log,,,"Error occurred during status handling",1364025788045
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025788045
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025789779
+error,log,,,"Error occurred during status handling",1364025789783
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025789783
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025791538
+error,log,,,"Error occurred during status handling",1364025791542
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025791542
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025793260
+error,log,,,"Error occurred during status handling",1364025793264
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025793265
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025795014
+error,log,,,"Error occurred during status handling",1364025795018
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025795018
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025796822
+error,log,,,"Error occurred during status handling",1364025796836
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025796836
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025798586
+error,log,,,"Error occurred during status handling",1364025798590
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025798590
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025800347
+error,log,,,"Error occurred during status handling",1364025800351
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025800351
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025802102
+error,log,,,"Error occurred during status handling",1364025802107
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025802107
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025803883
+error,log,,,"Error occurred during status handling",1364025803887
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025803888
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025805660
+error,log,,,"Error occurred during status handling",1364025805664
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025805664
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025807420
+error,log,,,"Error occurred during status handling",1364025807424
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025807424
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025809167
+error,log,,,"Error occurred during status handling",1364025809171
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025809171
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025810895
+error,log,,,"Error occurred during status handling",1364025810899
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025810899
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025812660
+error,log,,,"Error occurred during status handling",1364025812664
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025812664
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025814615
+error,log,,,"Error occurred during status handling",1364025814619
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025814619
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025816368
+error,log,,,"Error occurred during status handling",1364025816372
+error,log,,,"The listener (class org.eclipse.epp.usagedata.internal.recording.UsageDataRecorder) threw an exception",1364025816372
+activated,perspective,org.eclipse.jst.j2ee.ui,,"org.eclipse.jst.j2ee.J2EEPerspective",1364030834676
+started,bundle,org.eclipse.osgi,3.6.2.R36x_v20110210,"org.eclipse.osgi",1364030834678
+started,bundle,org.eclipse.equinox.simpleconfigurator,1.0.200.v20100503,"org.eclipse.equinox.simpleconfigurator",1364030834680
+started,bundle,com.ibm.icu,4.2.1.v20100412,"com.ibm.icu",1364030834681
+started,bundle,org.eclipse.compare.core,3.5.101.R36x_v20100929-0800,"org.eclipse.compare.core",1364030834683
+started,bundle,org.eclipse.core.contenttype,3.4.100.v20100505-1235,"org.eclipse.core.contenttype",1364030834683
+started,bundle,org.eclipse.core.databinding.observable,1.3.0.I20100601-0800,"org.eclipse.core.databinding.observable",1364030834685
+started,bundle,org.eclipse.core.expressions,3.4.200.v20100505,"org.eclipse.core.expressions",1364030834685
+started,bundle,org.eclipse.core.filebuffers,3.5.100.v20100520-0800,"org.eclipse.core.filebuffers",1364030834685
+started,bundle,org.eclipse.core.filesystem,1.3.1.R36x_v20100727-0745,"org.eclipse.core.filesystem",1364030834685
+started,bundle,org.eclipse.core.jobs,3.5.1.R36x_v20100824,"org.eclipse.core.jobs",1364030834687
+started,bundle,org.eclipse.core.net,1.2.100.I20100511-0800,"org.eclipse.core.net",1364030834687
+started,bundle,org.eclipse.core.resources,3.6.1.R36x_v20110131-1630,"org.eclipse.core.resources",1364030834687
+started,bundle,org.eclipse.core.runtime,3.6.0.v20100505,"org.eclipse.core.runtime",1364030834687
+started,bundle,org.eclipse.core.runtime.compatibility,3.2.100.v20100505,"org.eclipse.core.runtime.compatibility",1364030834689
+started,bundle,org.eclipse.core.runtime.compatibility.auth,3.2.200.v20100517,"org.eclipse.core.runtime.compatibility.auth",1364030834690
+started,bundle,org.eclipse.debug.core,3.6.0.v20100519,"org.eclipse.debug.core",1364030834691
+started,bundle,org.eclipse.emf.common,2.6.0.v20100914-1218,"org.eclipse.emf.common",1364030834691
+started,bundle,org.eclipse.emf.common.ui,2.6.0.v20100914-1218,"org.eclipse.emf.common.ui",1364030834691
+started,bundle,org.eclipse.emf.ecore,2.6.1.v20100914-1218,"org.eclipse.emf.ecore",1364030834691
+started,bundle,org.eclipse.emf.ecore.xmi,2.5.0.v20100521-1846,"org.eclipse.emf.ecore.xmi",1364030834691
+started,bundle,org.eclipse.emf.edit,2.6.0.v20100914-1218,"org.eclipse.emf.edit",1364030834691
+started,bundle,org.eclipse.emf.edit.ui,2.6.0.v20100914-1218,"org.eclipse.emf.edit.ui",1364030834691
+started,bundle,org.eclipse.epp.usagedata.gathering,1.3.1.R201102081640,"org.eclipse.epp.usagedata.gathering",1364030834691
+started,bundle,org.eclipse.epp.usagedata.recording,1.3.1.R201102081640,"org.eclipse.epp.usagedata.recording",1364030834691
+started,bundle,org.eclipse.equinox.app,1.3.1.R36x_v20100803,"org.eclipse.equinox.app",1364030834691
+started,bundle,org.eclipse.equinox.common,3.6.0.v20100503,"org.eclipse.equinox.common",1364030834692
+started,bundle,org.eclipse.equinox.ds,1.2.1.R36x_v20100803,"org.eclipse.equinox.ds",1364030834694
+started,bundle,org.eclipse.equinox.event,1.2.0.v20100503,"org.eclipse.equinox.event",1364030834696
+started,bundle,org.eclipse.equinox.p2.artifact.repository,1.1.1.R36x_v20100901,"org.eclipse.equinox.p2.artifact.repository",1364030834696
+started,bundle,org.eclipse.equinox.p2.core,2.0.3.R36x_v20110111,"org.eclipse.equinox.p2.core",1364030834730
+started,bundle,org.eclipse.equinox.p2.director,2.0.3.R36x_v20101117-1018,"org.eclipse.equinox.p2.director",1364030834732
+started,bundle,org.eclipse.equinox.p2.directorywatcher,1.0.203.R36x_v20101220,"org.eclipse.equinox.p2.directorywatcher",1364030834734
+started,bundle,org.eclipse.equinox.p2.engine,2.0.1.R36x_v20110201,"org.eclipse.equinox.p2.engine",1364030834734
+started,bundle,org.eclipse.equinox.p2.extensionlocation,1.2.0.v20100518,"org.eclipse.equinox.p2.extensionlocation",1364030834734
+started,bundle,org.eclipse.equinox.p2.garbagecollector,1.0.100.v20100503,"org.eclipse.equinox.p2.garbagecollector",1364030834734
+started,bundle,org.eclipse.equinox.p2.metadata,2.0.1.R36x_v20101202,"org.eclipse.equinox.p2.metadata",1364030834736
+started,bundle,org.eclipse.equinox.p2.metadata.repository,1.1.0.v20100513,"org.eclipse.equinox.p2.metadata.repository",1364030834736
+started,bundle,org.eclipse.equinox.p2.operations,2.0.0.v20100510,"org.eclipse.equinox.p2.operations",1364030834737
+started,bundle,org.eclipse.equinox.p2.publisher,1.1.2.v20100824-2220,"org.eclipse.equinox.p2.publisher",1364030834738
+started,bundle,org.eclipse.equinox.p2.reconciler.dropins,1.1.2.R36x_v20110114,"org.eclipse.equinox.p2.reconciler.dropins",1364030834738
+started,bundle,org.eclipse.equinox.p2.repository,2.0.2.R36x_v20110111-1500,"org.eclipse.equinox.p2.repository",1364030834739
+started,bundle,org.eclipse.equinox.p2.touchpoint.eclipse,2.0.3.R36x_v20101202,"org.eclipse.equinox.p2.touchpoint.eclipse",1364030834739
+started,bundle,org.eclipse.equinox.preferences,3.3.0.v20100503,"org.eclipse.equinox.preferences",1364030834739
+started,bundle,org.eclipse.equinox.registry,3.5.0.v20100503,"org.eclipse.equinox.registry",1364030834739
+started,bundle,org.eclipse.equinox.security,1.0.200.v20100503,"org.eclipse.equinox.security",1364030834739
+started,bundle,org.eclipse.equinox.util,1.0.200.v20100503,"org.eclipse.equinox.util",1364030834741
+started,bundle,org.eclipse.help,3.5.0.v20100524,"org.eclipse.help",1364030834741
+started,bundle,org.eclipse.jdt.core,3.6.2.v_A76_R36x,"org.eclipse.jdt.core",1364030834742
+started,bundle,org.eclipse.jdt.core.manipulation,1.3.0.v20100520-0800,"org.eclipse.jdt.core.manipulation",1364030834742

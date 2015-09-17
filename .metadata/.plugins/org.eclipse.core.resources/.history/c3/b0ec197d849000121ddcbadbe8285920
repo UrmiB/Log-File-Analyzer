@@ -1,0 +1,71 @@
+package com.cummins.project734.Test;
+
+import java.util.Arrays;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+
+
+public class JaccardsCoefficient implements Similarity {
+
+	public static void main(String[] args) throws IOException {
+		
+		Reader file1 = new FileReader("C:\\logs\\error2.txt");
+		Reader file2 = new FileReader("C:\\logs\\error3.txt");
+		BufferedReader br1 = new BufferedReader(file1);
+		BufferedReader br2 = new BufferedReader(file2);
+		//List<String> lines = new ArrayList<String>();
+		String line1 = br1.readLine();
+		String line2 = br2.readLine();
+		String [] x = line1.split(" ");
+		//System.out.println("X in main: "+x[0]+" "+x[1]);
+		String [] y = line2.split(" ");
+		br1.close();
+		br2.close();
+		System.out.println("Line1: "+line1+"  Line2: "+line2);
+		JaccardsCoefficient jc = new JaccardsCoefficient();
+		double coeff = jc.similarity(x, y);
+		System.out.println("Coefficient: "+coeff);
+
+	}
+	private static final long serialVersionUID = 1L;
+
+	public double similarity(String[] x, String[] y)
+	{
+		System.out.println("X: "+Arrays.asList(x)+"  Y: "+y);
+		double similarity_coefficient = 0.0d;
+		if ( (x!=null && y!=null) && (x.length>0 || y.length>0))
+		{
+			similarity_coefficient = similarity(Arrays.asList(x), Arrays.asList(y)); 
+		}
+		else
+		{
+			throw new IllegalArgumentException("The arguments x and y must be not NULL and either x or y must be non-empty.");
+		}
+		System.out.println("Similarity coeff: "+similarity_coefficient);
+		return similarity_coefficient;
+	}
+
+	private double similarity(List<String> x, List<String> y)
+	{
+		if( x.size() == 0 || y.size() == 0 )
+		{
+			return 0.0;
+		}
+
+		Set<String> unionXY = new HashSet<String>(x);
+		unionXY.addAll(y);
+		System.out.println("Set unionXY: "+unionXY);
+
+		Set<String> intersectionXY = new HashSet<String>(x);
+		intersectionXY.retainAll(y);
+		System.out.println("Set intersectionXY: "+intersectionXY);
+		System.out.println("Size of intersection: "+intersectionXY.size()+" Size of union: "+unionXY.size());
+		return (double) intersectionXY.size() / (double) unionXY.size(); 
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.cummins.project734.luceneentity.IndexSearcher&apos; to &apos;SearchIndex&apos;&#x0D;&#x0A;- Original project: &apos;LogFileAnalysis&apos;&#x0D;&#x0A;- Original element: &apos;com.cummins.project734.luceneentity.IndexSearcher&apos;&#x0D;&#x0A;- Renamed element: &apos;com.cummins.project734.luceneentity.SearchIndex&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;IndexSearcher&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.cummins.project734.luceneentity{IndexSearcher.java[IndexSearcher" matchStrategy="1" name="SearchIndex" qualified="false" references="true" similarDeclarations="false" stamp="1356341041609" textual="false" version="1.0"/>
+</session>

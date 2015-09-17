@@ -1,0 +1,49 @@
+	<br>
+	<div class="menuitem">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="HomeMenu.jsp"><img border="0" src="Images/house.png" height="35px" width="35px" ></a> 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<font face="Calibri" color="white" size="3">Home</font>
+	</div>
+	
+	<br>
+	<div class="menuitem">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="ExistingFileController?id=open"><img border="0" src="Images/file.png" height="30px" width="30px" ></a> 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<font face="Calibri" color="white" size="3">Open File</font>
+	</div>
+	
+	<br>
+	<div class="menuitem">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="AcceptFile.jsp"><img border="0" src="Images/newfile.jpg" height="30px" width="30px" ></a> 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<font face="Calibri" color="white" size="3">Add New File</font>
+	</div>
+	
+	<br>
+	<div class="menuitem">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="ExistingFileController?id=del"><img border="0" src="Images/trash.png" height="30px" width="30px" ></a> 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<font face="Calibri" color="white" size="3">Delete Files</font>
+	</div>
+	
+	<br>
+	<div class="menuitem">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="ViewReports.jsp"><img border="0" src="Images/report.png" height="30px" width="30px" ></a> 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<font face="Calibri" color="white" size="3">View Reports</font>
+	</div>
+	
+	<br>
+	<div class="menuitem">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="ProfileController"><img border="0" src="Images/profile.png" height="30px" width="30px" ></a> 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<font face="Calibri" color="white" size="3">View Profile</font>
+	</div>
+	
+	

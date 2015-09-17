@@ -1,0 +1,362 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@page import="com.cummins.project734.entity.AnalysisData"%>
+<%@page import="com.cummins.project734.entity.SearchResult"%>
+<%@page import="com.cummins.project734.dateTime.*" %>
+<%@page import="com.cummins.project734.entity.*" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%@ page  import = "java.awt.*" %>
+<%@ page  import = "java.io.*" %>
+<%@ page  import = "org.jfree.chart.*" %>
+<%@ page  import = "org.jfree.chart.entity.*" %>
+<%@ page  import ="org.jfree.data.general.*"%>
+<%@ page  import = "java.awt.image.*" %>
+<%@ page  import = "javax.imageio.ImageIO" %>
+<%@ page  import = "java.util.List" %>
+<%@ page  import = "java.util.ArrayList" %>
+<%@ page  import = "java.util.*" %>
+<%@ page import="java.text.DateFormat"%> 
+<%@ page import="java.text.SimpleDateFormat" %>
+
+<%
+String searchQuery = request.getParameter("searchQuery");
+SearchResult sResult = new SearchResult();
+ArrayList<String> RecordList = new ArrayList<String>();
+if(searchQuery != ""){
+	
+	sResult = (SearchResult)request.getAttribute("SearchResult");
+	RecordList = (ArrayList<String>)sResult.getRecords();
+	System.out.println("List: "+RecordList);
+}
+AnalysisData analysis = new AnalysisData();
+analysis = (AnalysisData)request.getAttribute("Analysis");
+
+List<DatewiseRecord>  DateList = new ArrayList<DatewiseRecord>();
+DateList = (ArrayList<DatewiseRecord>) analysis.getDatewiseRecords();
+DatewiseRecord dr = new DatewiseRecord();
+Iterator<DatewiseRecord> itd = DateList.iterator();
+int count =0;
+while(itd.hasNext())
+{
+	dr = itd.next();
+	//System.out.println("DATE: "+dr.getDateOfEvent());
+	//System.out.println("EVENT: "+dr.getEvent());
+	count++;
+}
+
+/* DatewiseRecord tr = new DatewiseRecord();
+ArrayList<ArrayList<DatewiseRecord>> Main = new ArrayList<ArrayList<DatewiseRecord>>();
+Main = (ArrayList<ArrayList<DatewiseRecord>>)request.getAttribute("Mainlist");*/
+
+/* Iterator mIter = Main.iterator();
+System.out.println("\n\n");
+while(mIter.hasNext()){
+	int cnt=0;
+	ArrayList<DatewiseRecord> li = new ArrayList<DatewiseRecord>();
+	li = (ArrayList<DatewiseRecord>) mIter.next();
+	Iterator lt = li.iterator();
+	System.out.println("\n");
+	while(lt.hasNext())
+	{
+		tr = (DatewiseRecord) lt.next();
+		System.out.println("DRec date: "+tr.getDateOfEvent()+" DRec event: "+tr.getEvent());
+		cnt++;
+	}
+	System.out.println("Count: "+cnt);
+}
+ */
+int noOfrecords = analysis.getTotalNoOfRecords();
+System.out.println("Number of records: "+noOfrecords);
+
+ArrayList<ErrorInformation> li = new ArrayList<ErrorInformation>();
+li = (ArrayList<ErrorInformation>)analysis.getErrorInfo();
+
+//Error List
+ArrayList<ErrorReport> erList = (ArrayList<ErrorReport>)request.getAttribute("erL");
+
+DateTime d = new DateTime();
+String [] str= d.dateTime1();
+System.out.println("Date1: "+str[0]+"Date2: "+str[1]);
+
+%>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<!--<script src="http://static.simile.mit.edu/timeline/api-2.3.0/timeline-api.js?bundle=true" type="text/javascript"></script> -->
+<script type="text/javascript" src="timeline/timeline.js"></script>
+<link rel="stylesheet" type="text/css" href="timeline/timeline.css">
+
+<script type="text/javascript">
+
+	    var timeline;
+        /* Calculate the color based on the given value.
+         * @param {number} H   Hue, a value be between 0 and 360
+         * @param {number} S   Saturation, a value between 0 and 1
+         * @param {number} V   Value, a value between 0 and 1
+         */
+        var hsv2rgb = function(H, S, V) {
+            var R, G, B, C, Hi, X;
+            C = V * S;
+            Hi = Math.floor(H/60);  // hi = 0,1,2,3,4,5
+            X = C * (1 - Math.abs(((H/60) % 2) - 1));
+            switch (Hi) {
+                case 0: R = C; G = X; B = 0; break;
+                case 1: R = X; G = C; B = 0; break;
+                case 2: R = 0; G = C; B = X; break;
+                case 3: R = 0; G = X; B = C; break;
+                case 4: R = X; G = 0; B = C; break;
+                case 5: R = C; G = 0; B = X; break;
+                default: R = 0; G = 0; B = 0; break;
+            }
+            return "RGB(" + parseInt(R*255) + "," + parseInt(G*255) + "," + parseInt(B*255) + ")";
+        };
+
+        // Called when the Visualization API is loaded.
+        function drawVisualization() {
+            // Create and populate a data table.
+            var data = [];
+
+            <%	DatewiseRecord tr = new DatewiseRecord();
+				ArrayList<ArrayList<DatewiseRecord>> Main = new ArrayList<ArrayList<DatewiseRecord>>();
+				Main = (ArrayList<ArrayList<DatewiseRecord>>)request.getAttribute("Mainlist");
+				Iterator mIter = Main.iterator();
+				Date date1 = new Date();
+	        	String str1;
+				Calendar cal = Calendar.getInstance();
+    
+				//System.out.println("\n\n");
+				while(mIter.hasNext()){
+					int cnt=0;
+					ArrayList<DatewiseRecord> list = new ArrayList<DatewiseRecord>();
+					list = (ArrayList<DatewiseRecord>) mIter.next();
+					Iterator lt = list.iterator();
+				//	System.out.println("\n");
+					while(lt.hasNext())
+					{
+						tr = (DatewiseRecord) lt.next();
+						//System.out.println("DRec date: "+tr.getDateOfEvent()+" DRec event: "+tr.getEvent());
+						date1 = tr.getDateOfEvent();
+						cal.setTime(date1);
+						cnt++;
+						str1 = tr.getEvent();
+						//System.out.println("STRING: "+str1);
+					}
+			%>	
+                    
+            var x = document.getElementById('Count').value;
+            var count = <%=cnt%>;
+
+            <%
+            //DateFormat outputFormatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy");
+            DateFormat outputFormatter = new SimpleDateFormat("MM/dd/yyyy");
+			String output = outputFormatter.format(cal.getTime());
+			Date date2 = outputFormatter.parse(output);
+			System.out.println("date2 ndndn: "+date2);
+			%>
+			
+			var d = new Date(<%=date2.getTime()%>);
+         
+            var hours = 24;
+            var start = new Date(d);
+            var end = new Date(d);
+            end.setHours(end.getHours() + hours);
+
+            // create item with minimum requirement
+            /*var num = Math.round(Math.random() * maxNum);    // number of members available
+            var height = Math.round(num / maxNum * 80 + 20); // a percentage, with a lower bound on 20%
+            var style = 'height:' + height + 'px;';
+            var requirement = '<div class="requirement" style="' + style + '" ' +
+                    'title="Minimum requirement: ' + num + ' people"></div>';*/
+            // create item with actual number
+            // num = Math.round(Math.random() * maxNum);    // number of members available
+            num = count; 
+            //height = Math.round(num / maxNum * 70 + 20); // a percentage, with a lower bound on 20%
+            height = (num/x)*100; 
+            var hue = Math.min(Math.max(height, 20), 80) * 1.2; // hue between 0 (red) and 120 (green)
+            var color = hsv2rgb(hue, 0.95, 0.95);
+            var borderColor = hsv2rgb(hue, 0.9, 0.9);
+            style = 'height:' + height + 'px;' +'background-color: ' + color + ';' +
+                    'border-top: 2px solid ' + borderColor + ';';
+            var actual = '<div class="bar" style="' + style + '" ' +
+            			'title="Actual: ' + num + ' Records">' + num + '</div>';
+              
+            data.push({
+                    'group': 'Number of Events Per Day',
+                    'start': start,
+                    'end': end,
+                   // 'content': requirement + actual
+                    'content': actual
+                    });
+
+                //data.push(item);
+		   /* var data = [];
+	          data.push({
+              'start': new Date(2012, 1, 1),
+              'end': new Date(2013, 2, 30),  // end is optional
+              'content': 'Trajectory A'
+              // Optional: a field 'group'
+              // Optional: a field 'className'
+              // Optional: a field 'editable'
+            });*/
+
+            // specify options
+            var options = {
+                "width":  "1250px",
+                "height": "200px",
+                "style": "box"
+            };
+            
+            // Instantiate our timeline object.
+            timeline = new links.Timeline(document.getElementById('mytimeline'));
+            // Draw our timeline with the created data and options
+            timeline.draw(data, options);
+            <%	
+			System.out.println("Count: "+cnt);
+		}%>     
+   }
+</script>
+
+<style type="text/css">
+body{
+	background-image:url(Images/image.jpg);
+	height: 1150px;
+	width: 1100px;
+}
+div.top{
+	background:#2E2E2E;
+	width:1260px;
+	height:100px;
+}
+div.title{
+	background-image:url(Images/title.jpg);
+	width:150px;
+	height:100px;
+}
+div.leftcolumn {  
+	border: 1px; 
+	float: left;
+	margin: 0.5em;
+	width: 20em;
+	height: 20em;
+}
+div.rightcolumn {
+	background: #fff;
+	border: 1px; 
+	float: right;
+	padding: 1em 0 0 1em;
+	margin-left: 1em;
+	width: 25em;
+	height: 18em;
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+}
+div.leftfloat{
+	background:#2E2E2E;
+	float:left;
+	margin:0.5em;
+	width:150px;
+	height:500px;
+}
+div.leftfull{
+	float: right;
+	margin:0.5em;
+	width: 900px;
+	height: 300px;
+}
+div.rightfull{
+	float: right;
+	margin:0.5em;
+	width: 900px;
+}
+div.table{
+	margin-top: 2em;
+}
+div.Link{
+	font-size: 1.2em;
+	font-style: italic;
+	font-weight: bold;
+	margin-left: 55em;
+	margin-top: 1em;
+}
+</style>
+
+</head>
+<body onload="drawVisualization();" >
+	<div class="top">
+		<div class="title">
+			<div class="Link">
+				<a href="LoginPage.jsp"><font color="#ffffff">LogOut</font></a>
+		</div>
+		</div>
+	</div><br><br><br><br>
+		<div id="mytimeline"></div>
+		<br><br>
+	<div class="leftfloat">
+		<%@ include file="SideMenu.jspbb" %>
+	</div>
+	
+	<form action="PatternController" >
+	<div class="rightfull">
+	<div class="leftfull">
+<div class="leftcolumn">
+	<img src="D:\\College/B.E/Project/Log File Analysis/LogFileAnalysis/WebContent/Images/piechart.jpg"  width="450" height="300"/>
+</div>
+<div class="rightcolumn">	
+	<font size="4"> Total number of records indexed: <%=noOfrecords %>
+		  <%if(searchQuery != ""){%>
+			 <br>Frequency of Keyword: <%=sResult.getFrequency()%>
+			 <br> Percentage: <%=analysis.getPercentage()%>
+		 <%} %>
+		 <br><br>  Earliest Record : <%=str[0] %>
+		 <br>  Latest Record : <%=str[1]%></font>
+		<br><br>
+		<hr width=90%><br>
+		<font size="4">Error Details:</font>
+		<% Iterator<ErrorInformation> it = li.iterator();
+			ErrorInformation ei = new ErrorInformation();
+			while(it.hasNext()){
+			ei = (ErrorInformation)it.next();
+			%>
+				<br><font size="4">Error <%=ei.getErrorType() %>
+				: Frequency   <%=  ei.getNumber() %></font>
+		<%	}%>
+</div>
+</div>
+<br><br>
+
+<div class="table">
+
+	<table border="1" width="1020">
+		<tr>
+		<td width="200"><font size="4"><b>Records</b></font></td>
+		</tr>
+		<%if(searchQuery != ""){
+			Iterator<String> iterator = RecordList.iterator();
+	        while(iterator.hasNext()){
+	           // System.out.println(iterator.next());
+	        	  %>
+			<tr>
+	  		<td><font size="3"><%= iterator.next()%></font></td>
+			</tr>
+	  	 <%}}else{
+	  		Iterator<ErrorReport> it1 = erList.iterator();
+	  		ErrorReport erRep = new ErrorReport();
+			while(it1.hasNext()){
+				erRep = (ErrorReport) it1.next();%>
+				<tr>
+		  		<td><font size="3"><%=erRep.getErrorRecord()%></font></td>
+				</tr>	
+			<%}}%>
+	</table>
+	<input name="Count" value="<%=count%>" type="hidden">
+	<input type="submit" value="View Pattern">
+	<!-- <input type="submit" value="Generate Report"> -->
+</div>
+</div>
+</form>
+</body>
+</html>

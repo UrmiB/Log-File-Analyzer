@@ -1,0 +1,116 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<style type="text/css">
+body{
+	background-image:url(Images/blue2.jpg);
+	height: 1150px;
+	width: 1100px;
+}
+div.square{
+	background:#fff;
+	padding: 5em 0 0 3em;
+	margin-top: 8em;
+	margin-left: 10em;
+	width: 50em;
+	height: 30em;
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+}
+h1{
+	font-size:1em;
+	font-style: italic;
+	color:#fff;
+	margin-left: 3em;
+	margin-top: 2em;
+}
+div.Link{
+	font-size: 1em;
+	font-style: italic;
+	font-weight: bold;
+	margin-left: 60em;
+	margin-top: 3em;
+}
+</style>
+
+<script type="text/javascript">
+	function toggle(selObj){
+		textObj = document.getElementById("opr");
+		add = document.getElementById("add");
+		remove = document.getElementById("remove");
+		if(selObj.options[selObj.selectedIndex].value == "delimiter")
+		{
+			textObj.disabled = false;
+			add.disabled = true;
+			remove.disabled = true;
+		}
+		else if(selObj.options[selObj.selectedIndex].value == "fieldLength"){
+			textObj.value = " ";
+			textObj.disabled = true;
+			add.disabled = false;
+			remove.disabled = false;
+		}
+		else{
+			textObj.value = " ";
+			textObj.disabled = true;
+			add.disabled = true;
+			remove.disabled = true;
+		}	
+	}
+	function incrementCount() {
+		document.frm.count.value = parseInt(document.frm.count.value) + 1;
+		addTextBox();
+	}
+	function decCount() {
+		document.frm.count.value = parseInt(document.frm.count.value) - 1;
+		removeTextBox();
+	}
+	function addTextBox() {
+		var form = document.frm;
+		
+		form.appendChild(document.createElement('div')).innerHTML = "Field Length: <input type=\"text\" name=\"txt\">";
+	}
+	function removeTextBox() {
+		var form = document.frm;
+		if (form.lastChild.nodeName.toLowerCase() == 'div')
+			form.removeChild(form.lastChild);
+	}
+	
+</script>
+
+</head>
+<body>
+	<div class="Link">
+		<a href="LoginPage.jsp"><font color="#ffffff">LogOut</font></a>
+	</div>
+	<%String name = (String)request.getAttribute("myname"); %>
+	<h1>Welcome <%=name%>,</h1>
+	<div class="square">
+	<form name = "frm" action="AcceptFileController">
+		<font size="4">Enter File Path: </font><input size="60" name="file" type="file"/><br><br>
+		<font size="4">Select Type: </font>&nbsp;&nbsp;&nbsp;&nbsp;
+	 	
+		<select id="op1" name="op1" onchange="toggle(this);">
+			<option value="default">Select</option>
+  	  		<option value="delimiter">Delimiter</option>
+  	  		<option value="fieldLength">Field Length</option>
+  	  	</select>
+		<br><br>
+
+		<font size="4">Enter the Delimiter: </font>
+		<input type="text" name="opr" id="opr" disabled="disabled">
+		<br><br>
+
+		<font size="4">Number of fields:</font>
+		<input type="hidden" name="count" value="0" readonly>
+		<input type="button" value="Add field" id="add" name="add" onClick="incrementCount()" disabled="disabled">
+		<input type="button" value="Remove field" id="remove" name="remove" onClick="decCount()" disabled="disabled">
+
+		<input type="submit" value="Submit">
+		</form>
+	</div>
+</body>
+</html>

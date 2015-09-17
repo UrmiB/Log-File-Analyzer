@@ -1,0 +1,121 @@
+package com.cummins.project734.fileHelper;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import com.cummins.project734.entity.DateIndexSearcher;
+import com.cummins.project734.entity.JaccardCoefficient;
+import com.sun.xml.internal.ws.api.pipe.NextAction;
+
+public class SavePattern {
+	public void saveImportantPattern(List<ArrayList<ArrayList<String>>> allImportantRecords,List<Integer> fieldLenArray){
+
+		ArrayList<ArrayList<String>> oneTypeList = new ArrayList<ArrayList<String>>();
+		ArrayList<String> actualList = new ArrayList<String>();
+		String errorRecord = "";
+		int count=0;
+		int flag=0;
+		int index = 0;
+		int lowerbound = 0 ;
+		int upperbound = 27 ;
+		String record = "";
+		int initialCnt = 0;
+		Iterator allIter = allImportantRecords.iterator();
+
+		System.out.println("\n\nInside savePattern: ");
+		while(allIter.hasNext()){
+
+
+			oneTypeList  = (ArrayList<ArrayList<String>>) allIter.next();
+
+			Iterator oneIter = oneTypeList.iterator();
+			List <String> nonRepeatingRec = new ArrayList<String>();
+			while(oneIter.hasNext()){
+
+				actualList = (ArrayList<String>) oneIter.next();
+
+				Iterator actualIter = actualList.iterator();
+				count=0;
+				while(actualIter.hasNext()){
+					flag=0;
+					if(count==0){
+
+						errorRecord = actualIter.next().toString();
+						if(errorRecord.isEmpty()){
+
+						}
+						else{
+							/*if(initialCnt == 0){
+								initialCnt++;
+								DateIndexSearcher dis = new DateIndexSearcher();
+
+								index = dis.dateIndexSearcher(errorRecord, fieldLenArray);
+								System.out.println("Index in savePattern: "+index);
+								//Date index
+								int noOffields = fieldLenArray.size();
+								lowerbound = 0;
+								upperbound = 0;
+								int sum = 0 ;
+								int count1 = 0;
+
+								Iterator<Integer> fieldLenIter = fieldLenArray.iterator();
+								while(fieldLenIter.hasNext()){
+									if(index==count1){
+										lowerbound=sum;
+										sum=sum+fieldLenIter.next();
+										upperbound=sum;
+
+									}
+									else{
+										sum=sum+fieldLenIter.next();
+
+									}
+									System.out.println("Lowerbound: "+lowerbound+"Upperbound: "+upperbound+"Sum: "+sum);
+									count1++;
+								}
+							}*/
+							errorRecord = errorRecord.substring(upperbound,errorRecord.length());
+						}
+					}
+					else{
+						String nextRecord = "";
+						nextRecord = (String) actualIter.next();
+						nextRecord = nextRecord.substring(upperbound,nextRecord.length()).toString();
+						if(nextRecord==null){
+						}
+						else{
+							if(nonRepeatingRec==null){
+								nonRepeatingRec.add((nextRecord));
+							}
+							else{
+								Iterator nrIter = nonRepeatingRec.iterator();
+								while(nrIter.hasNext()){
+									if(nextRecord.equalsIgnoreCase(nrIter.next().toString())){
+										flag=1;
+									}
+								}
+								if(flag==0){
+									nonRepeatingRec.add(nextRecord);
+								}
+							}
+						}
+					}
+					count++;
+				}
+
+			}
+			nonRepeatingRec.add(errorRecord);
+			if(nonRepeatingRec!=null){
+				oneTypeList.add((ArrayList<String>) nonRepeatingRec);
+			}
+			System.out.println("nonRepeatingRecord: "+nonRepeatingRec);
+			System.out.println("oneTypeList: "+oneTypeList);
+
+		}
+
+
+
+
+	}
+}

@@ -1,0 +1,90 @@
+package com.cummins.project734.servlet;
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.cummins.project734.luceneentity.IndexBuilder;
+
+/**
+ * Servlet implementation class AcceptFileController
+ */
+public class AcceptFileController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public AcceptFileController() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		processRequest(request,response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		processRequest(request,response);
+	}
+
+	private void processRequest(HttpServletRequest request,
+			HttpServletResponse response) {
+		String fileName = request.getParameter("file");
+		String no_fields = request.getParameter("no_fields");
+		String delimiter = request.getParameter("delim");
+		String fileType = "fixedLen";
+		Integer [] fieldLen = {0,39,27,19,17};
+		System.out.println("File Name: "+fileName );
+		/* Extracting directory path*/
+		String tempName = new StringBuffer(fileName).reverse().toString();
+		String [] buffer = tempName.split("\\\\");
+		tempName = "";
+		for(int i=1;i<=buffer.length;i++){
+			if(i<buffer.length){
+				System.out.println("Split string: "+buffer[i]);
+				if(i!=1){
+					buffer[i] = "\\".concat(buffer[i]);
+				}
+				tempName = new StringBuffer(tempName.concat(buffer[i])).toString();
+				System.out.println("tempName in loop i="+i+" : "+tempName);
+			}
+		}
+		fileName = new StringBuffer(tempName).reverse().toString();
+		System.out.println("FileName after manipulation: "+fileName);
+		IndexBuilder ibuild = new IndexBuilder();
+		//Calling index builder for performing indexing
+		try {
+			if(fileType.equalsIgnoreCase("Delim")){
+				ibuild.buildIndex(fileName,no_fields,delimiter);
+			}
+			else{
+				
+				ibuild.buildIndex(fileName, no_fields, fieldLen);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			request.getRequestDispatcher("./SearchIndex.jsp").forward(request, response);
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

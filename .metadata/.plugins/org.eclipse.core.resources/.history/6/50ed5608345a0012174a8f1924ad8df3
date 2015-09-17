@@ -1,0 +1,15 @@
+package com.cummins.project734.entity;
+
+public class AnalysisData {
+	private int frequency;
+	private float percentage;
+
+	public int getFrequency() {
+		return frequency;
+	}
+
+	public void setFrequency(int frequency) {
+		this.frequency = frequency;
+	}
+	
+}

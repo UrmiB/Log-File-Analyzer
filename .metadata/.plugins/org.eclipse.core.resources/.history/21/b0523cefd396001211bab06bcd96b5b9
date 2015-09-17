@@ -1,0 +1,91 @@
+package com.cummins.project734.luceneentity;
+
+import java.util.Arrays;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+
+import com.cummins.project734.entity.DateIndexSearcher;
+
+
+public class JaccardsCoefficient implements Similarity {
+
+	public void calculateJaccardCoefficient(List<ArrayList<ArrayList<String>>> segregatedList) {
+
+		/*Reader file1 = new FileReader("C:\\morefiles\\error1.txt");
+		Reader file2 = new FileReader("C:\\morefiles\\error1.txt");
+		BufferedReader br1 = new BufferedReader(file1);
+		BufferedReader br2 = new BufferedReader(file2);*/
+		//List<String> lines = new ArrayList<String>();
+
+		 
+		
+		String line1 = segregatedList.get(1).get(0).get(1);
+		
+		String line2 = segregatedList.get(1).get(1).get(1);
+		
+		System.out.println("LineX: "+line1+"  LineY: "+line2);
+		DateIndexSearcher dis = new DateIndexSearcher();
+		
+		int index = dis.dateIndexSearcher("[Mon Apr 25 14:57:43 2011] [notice] Child 540: Starting thread to listen on port 443.");
+		System.out.println("Index: "+index);
+		
+		line1 = line1.substring(26, line1.length());
+		line2 = line2.substring(26, line2.length());
+		String [] x = line1.split(" ");
+
+		//System.out.println("X in main: "+x[0]+" "+x[1]);
+		String [] y = line2.split(" ");
+
+	
+
+		/*br1.close();
+		br2.close();*/
+		System.out.println("Line1: "+line1+"  Line2: "+line2);
+		JaccardsCoefficient jc = new JaccardsCoefficient();
+		double coeff = jc.similarity(x, y,index);
+		System.out.println("Coefficient: "+coeff);
+
+	}
+	private static final long serialVersionUID = 1L;
+
+	public double similarity(String[] x, String[] y, int index)
+	{
+		System.out.println("X: "+Arrays.asList(x)+"  Y: "+y);
+		double similarity_coefficient = 0.0d;
+		if ( (x!=null && y!=null) && (x.length>0 || y.length>0))
+		{
+			similarity_coefficient = similarity(Arrays.asList(x), Arrays.asList(y),index); 
+		}
+		else
+		{
+			throw new IllegalArgumentException("The arguments x and y must be not NULL and either x or y must be non-empty.");
+		}
+		System.out.println("Similarity coeff: "+similarity_coefficient);
+		return similarity_coefficient;
+	}
+
+	private double similarity(List<String> x, List<String> y,int index)
+	{
+		if( x.size() == 0 || y.size() == 0 )
+		{
+			return 0.0;
+		}
+		Set<String> unionXY = new HashSet<String>(x);
+		unionXY.addAll(y);
+		System.out.println("Set unionXY: "+unionXY);
+
+		Set<String> intersectionXY = new HashSet<String>(x);
+		intersectionXY.retainAll(y);
+		System.out.println("Set intersectionXY: "+intersectionXY);
+		System.out.println("Size of intersection: "+intersectionXY.size()+" Size of union: "+unionXY.size());
+		return (double) intersectionXY.size() / (double) unionXY.size(); 
+	}
+}

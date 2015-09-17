@@ -1,0 +1,43 @@
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+
+/**
+ * Servlet implementation class MyServlet
+ */
+public class MyServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    /**
+     * Default constructor. 
+     */
+    public MyServlet() {
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//super.doGet(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//super.doPost(request, response);
+		//PrintWriter out = response.getWriter();
+		//out.println("<html>SERVLET POST</html>");
+		String Username = request.getParameter("userid");
+		request.setAttribute("myname",Username);
+		//response.sendRedirect("AcceptFile.jsp");
+		request.getRequestDispatcher("AcceptFile.jsp").forward(request, response);
+		
+	}
+
+}

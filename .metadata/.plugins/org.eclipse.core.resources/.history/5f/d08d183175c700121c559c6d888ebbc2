@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>LogFileAnalysis</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>AcceptFileController</display-name>
+    <servlet-name>AcceptFileController</servlet-name>
+    <servlet-class>com.cummins.project734.servlet.AcceptFileController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AcceptFileController</servlet-name>
+    <url-pattern>/AcceptFileController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchIndexController</display-name>
+    <servlet-name>SearchIndexController</servlet-name>
+    <servlet-class>com.cummins.project734.servlet.SearchIndexController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchIndexController</servlet-name>
+    <url-pattern>/SearchIndexController</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>LoginController</display-name>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>com.cummins.project734.servlet.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/LoginController</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>UserDirectories</display-name>
+    <servlet-name>UserDirectories</servlet-name>
+    <servlet-class>com.cummins.project734.servlet.UserDirectories</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserDirectories</servlet-name>
+    <url-pattern>/UserDirectories</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>CreateAccountController</display-name>
+    <servlet-name>CreateAccountController</servlet-name>
+    <servlet-class>com.cummins.project734.servlet.CreateAccountController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateAccountController</servlet-name>
+    <url-pattern>/CreateAccountController</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ExistingFileController</display-name>
+    <servlet-name>ExistingFileController</servlet-name>
+    <servlet-class>com.cummins.project734.servlet.ExistingFileController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExistingFileController</servlet-name>
+    <url-pattern>/ExistingFileController</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>PatternController</display-name>
+    <servlet-name>PatternController</servlet-name>
+    <servlet-class>com.cummins.project734.servlet.PatternController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PatternController</servlet-name>
+    <url-pattern>/PatternController</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>DeleteFileController</display-name>
+    <servlet-name>DeleteFileController</servlet-name>
+    <servlet-class>com.cummins.project734.servlet.DeleteFileController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteFileController</servlet-name>
+    <url-pattern>/DeleteFileController</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>JspToPdf</display-name>
+    <servlet-name>JspToPdf</servlet-name>
+    <servlet-class>com.cummins.project734.servlet.JspToPdf</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JspToPdf</servlet-name>
+    <url-pattern>/JspToPdf</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>PdfTrial</display-name>
+    <servlet-name>PdfTrial</servlet-name>
+    <servlet-class>com.cummins.project734.servlet.PdfTrial</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PdfTrial</servlet-name>
+    <url-pattern>/PdfTrial</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ProfileController</display-name>
+    <servlet-name>ProfileController</servlet-name>
+    <servlet-class>com.cummins.project734.servlet.ProfileController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProfileController</servlet-name>
+    <url-pattern>/ProfileController</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

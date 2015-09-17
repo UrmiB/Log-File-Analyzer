@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<style type="text/css">
+body{
+	background-image:url(Images/blue2.jpg);
+	height: 1150px;
+	width: 1100px;
+}
+div.square{
+	background:#fff;
+	padding: 5em 0 0 3em;
+	margin-top: 8em;
+	margin-left: 10em;
+	width: 50em;
+	height: 30em;
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+}
+h1{
+	font-size:1em;
+	font-style: italic;
+	color:#fff;
+	margin-left: 3em;
+	margin-top: 2em;
+}
+div.Link{
+	font-size: 1em;
+	font-style: italic;
+	font-weight: bold;
+	margin-left: 60em;
+	margin-top: 3em;
+}
+</style>
+</head>
+<body>
+	<div class="Link">
+		<a href="LoginPage.jsp"><font color="#ffffff">LogOut</font></a>
+	</div>
+	<%String name = (String)request.getAttribute("myname"); %>
+	<h1>Welcome <%=name%>,</h1>
+	<div class="square">
+	<form action="AcceptFileController">
+		<font size="4">Enter File Path: </font><input size="60" name="file" type="file"/><br><br>
+		<font size="4">Enter the number of fields: </font><input size="10" name="nofield" type="text"/><br><br>
+		<font size="4">Fields: </font><input size="15" name="field1" type="text"/>&nbsp;&nbsp;<input size="15" name="field2" type="text"/>
+		&nbsp;&nbsp;<input size="15" name="field3" type="text"/>
+		<input type="submit" value="Submit">
+		</form>
+	</div>
+</body>
+</html>

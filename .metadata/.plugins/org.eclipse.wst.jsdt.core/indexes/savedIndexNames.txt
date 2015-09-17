@@ -1,0 +1,7 @@
+INDEX VERSION 1.122+C:\Log File Analysis\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+643880627.index
+2657678198.index
+1308662331.index
+277382414.index
+2056621194.index
+1374499250.index

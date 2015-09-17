@@ -1,0 +1,44 @@
+package com.cummins.project734.dbHelper;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+
+import com.cummins.project734.dbhandler.DatabaseHandler;
+import com.mysql.jdbc.Connection;
+
+public class SearchIndexHelper  extends DatabaseHandler{
+	public List<Integer> getFieldLengths(String userName,String fileName){
+		Connection con = (Connection) getConnection();
+		Statement st = null;
+		int userid = 0;
+		int fileid = 0;
+		int noOfFields = 0;
+		try {
+			st = con.createStatement();
+			
+			ResultSet rs = st.executeQuery("Select UserAccountID from useraccount where UserName='"+userName+"'");
+			while(rs.next()){
+				userid =rs.getInt(1);
+				System.out.println("userid: "+userid);
+			}
+			
+			st = con.createStatement();
+			
+			ResultSet rs1 = st.executeQuery("Select FileId,NoOfFields from filetable where UserFileID='"+userid+"' and FileName='"+fileName+"'");
+			while(rs1.next()){
+				fileid = rs.getInt(1);
+				noOfFields = rs.getInt(2);
+			}
+			
+			st = con.createStatement();
+			ResultSet rs2 = st.executeQuery("Select FieldLength from filefieldlength where FileLenID='"+fileid+"' and FieldNumber between 0 AND "+(noOfFields-1)+"");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
+}

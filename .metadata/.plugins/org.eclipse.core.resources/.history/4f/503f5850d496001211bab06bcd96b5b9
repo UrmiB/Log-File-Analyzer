@@ -1,0 +1,147 @@
+package com.cummins.project734.luceneentity;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+import com.cummins.project734.entity.AnalysisData;
+import com.cummins.project734.entity.ErrorInformation;
+import com.cummins.project734.entity.ErrorRelevantRecordsList;
+import com.cummins.project734.entity.SearchResult;
+
+public class PatternSearcher {
+
+	public void searchPattern(AnalysisData analysis) throws Exception{
+		File indexDir = new File("C:\\luceneIndex");
+		ErrorRelevantRecordsList relevantRecordList = new ErrorRelevantRecordsList();
+
+		List<ArrayList> errorRecList = new ArrayList<ArrayList>();
+		List searchResultList = new ArrayList<String>();
+		List docIdList = new ArrayList<Integer>();
+		SearchIndex search = new SearchIndex();
+		Integer lineNo = 0;
+		Integer recId = 0;
+		int upper = 4;
+		int maxDocs = 0;
+		String record = "";
+		String queryStr = "error*";
+		SearchResult searchResult = new SearchResult();
+		searchResult = search.searchIndex(indexDir, queryStr, 1000);
+		maxDocs = searchResult.getMaxDocs();
+		searchResultList = searchResult.getRecords();
+		docIdList = searchResult.getDocIds();
+
+		Iterator recIterator = searchResultList.iterator();
+		Iterator idIter = docIdList.iterator();
+
+		while(recIterator.hasNext()){
+			List<String>  errorRelRecords = new ArrayList<String>();
+			errorRelRecords.add((String) recIterator.next());
+			lineNo = (Integer) idIter.next();
+			if(lineNo==0){
+				recId = lineNo+1;
+				upper = 2;
+			}
+			else if(lineNo==1){
+				recId = lineNo -1;
+				upper = 3;
+			}
+			else if(lineNo==(maxDocs-2)){
+				recId = lineNo - 2;
+				upper = 2;
+			}
+			else if(lineNo==(maxDocs-1)){
+				recId = lineNo - 2;
+				upper=2;
+			}
+			else{
+				recId = lineNo - 2;	
+			}
+
+			for(int i=0;i<upper;i++){
+				if(i<maxDocs){
+					System.out.println("RecId: "+recId+"  i: "+i+"  lineNo+ "+lineNo+"  upper: "+upper);
+					if(recId==lineNo){
+						recId++;
+						System.out.println("RecId: "+recId+"  i: "+i+"  lineNo+ "+lineNo+"  upper: "+upper);
+					}
+					if(i<maxDocs){
+						record = search.getRecordById(recId, indexDir);
+
+
+						errorRelRecords.add(record);
+						recId++;
+					}
+				}
+			}
+
+			errorRecList.add((ArrayList<String>) errorRelRecords);
+
+		}
+
+		for(int j=0;j<5;j++){
+			System.out.println("\n\nArrayList of ArrayList : "+errorRecList.get(j));	
+		}
+
+		List<ArrayList<ArrayList<String>>> segregatedList = new ArrayList<ArrayList<ArrayList<String>>>();
+		segregatedList = segregateLists(errorRecList,analysis);
+
+		JaccardsCoefficient jc = new JaccardsCoefficient();
+		jc.calculateJaccardCoefficient(segregatedList);
+	}
+
+	private List<ArrayList<ArrayList<String>>> segregateLists(List<ArrayList> errorRecList, AnalysisData analysis) {
+
+		List<ArrayList<ArrayList<String>>> segregatedList = new ArrayList<ArrayList<ArrayList<String>>>();
+		List<String> tempLinkedList = new LinkedList<String>();
+		String record = new String();
+		int flag = 0;
+		int count=0;
+		int x=0;
+
+		List<String> errorTypes = new ArrayList<String>();
+		List<ErrorInformation> eInfo = new ArrayList<ErrorInformation>();
+		eInfo = analysis.getErrorInfo();
+		Iterator eInfoIter = eInfo.iterator();
+		
+		Integer eNo = eInfo.size();
+		List<ArrayList<String>> errorTypeList = new ArrayList<ArrayList<String>>();
+		
+		while(eInfoIter.hasNext()){
+			
+			Iterator<ArrayList> erlIterator = errorRecList.iterator();
+			List<ArrayList<String>> oneTypeList = new ArrayList<ArrayList<String>>();
+			
+			ErrorInformation type = (ErrorInformation) eInfoIter.next();
+			while(erlIterator.hasNext()){
+				tempLinkedList = erlIterator.next();
+				Iterator<String> tllIterator = tempLinkedList.iterator();
+				record = tllIterator.next();
+				int j=0;
+				String [] splitErrorRecord = record.toString().split(" ");
+				//	System.out.println("\nSplit String: "+splitErrorRecord[5]+"  "+splitErrorRecord.length);
+				for(int i=0;i<splitErrorRecord.length;i++){
+					//System.out.println("splitErrorRecord[i]+ "+splitErrorRecord[i]);
+					if(splitErrorRecord[i].toString().trim().equalsIgnoreCase("[error".toString().trim())){
+						j=i+1;
+						if(splitErrorRecord[j].toString().equals(type.getErrorType().toString().trim())){
+							oneTypeList.add((ArrayList<String>) tempLinkedList);
+							
+						}
+					}
+
+				}
+
+			}
+			System.out.println("OneTypeList: "+oneTypeList.get(0)+"  No of elements: "+oneTypeList.size());
+			segregatedList.add((ArrayList<ArrayList<String>>) oneTypeList);
+			System.out.println("Segregated list: "+segregatedList);
+			// TODO Auto-generated method stub
+
+		}	
+		return segregatedList;
+	}
+
+}

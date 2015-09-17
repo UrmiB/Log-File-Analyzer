@@ -1,0 +1,88 @@
+package com.cummins.project734.luceneentity;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+import com.cummins.project734.entity.ErrorRelevantRecordsList;
+import com.cummins.project734.entity.SearchResult;
+
+public class PatternSearcher {
+		
+	public void searchPattern() throws Exception{
+		File indexDir = new File("C:\\luceneIndex");
+		ErrorRelevantRecordsList relevantRecordList = new ErrorRelevantRecordsList();
+		
+		List<LinkedList> errorRecList = new ArrayList<LinkedList>();
+		List searchResultList = new ArrayList<String>();
+		List docIdList = new ArrayList<Integer>();
+		SearchIndex search = new SearchIndex();
+		Integer lineNo = 0;
+		Integer recId = 0;
+		int upper = 4;
+		int maxDocs = 0;
+		String record = "";
+		String queryStr = "error*";
+		SearchResult searchResult = new SearchResult();
+		searchResult = search.searchIndex(indexDir, queryStr, 1000);
+		maxDocs = searchResult.getMaxDocs();
+		searchResultList = searchResult.getRecords();
+		docIdList = searchResult.getDocIds();
+		
+		Iterator recIterator = searchResultList.iterator();
+		Iterator idIter = docIdList.iterator();
+		
+		while(recIterator.hasNext()){
+			List<String>  errorRelRecords = new LinkedList<String>();
+			errorRelRecords.add((String) recIterator.next());
+			lineNo = (Integer) idIter.next();
+			if(lineNo==0){
+				recId = lineNo+1;
+				upper = 2;
+			}
+			else if(lineNo==1){
+				recId = lineNo -1;
+				upper = 3;
+			}
+			else if(lineNo==(maxDocs-2)){
+				recId = lineNo - 2;
+				upper = 2;
+			}
+			else if(lineNo==(maxDocs-1)){
+				recId = lineNo - 2;
+				upper=2;
+			}
+			else{
+				recId = lineNo - 2;	
+			}
+			
+			for(int i=0;i<upper;i++){
+				if(i<maxDocs){
+					System.out.println("RecId: "+recId+"  i: "+i+"  lineNo+ "+lineNo+"  upper: "+upper);
+					if(recId==lineNo){
+						recId++;
+						System.out.println("RecId: "+recId+"  i: "+i+"  lineNo+ "+lineNo+"  upper: "+upper);
+					}
+					if(i<maxDocs){
+						record = search.getRecordById(recId, indexDir);
+
+
+						errorRelRecords.add(record);
+						recId++;
+					}
+				}
+			}
+			
+			errorRecList.add((LinkedList<String>) errorRelRecords);
+			
+		}
+		
+		for(int j=0;j<5;j++){
+			System.out.println("\n\nArrayList of LinkedList : "+errorRecList.get(j));	
+		}
+		
+	}
+	
+}

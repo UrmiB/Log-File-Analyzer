@@ -1,0 +1,64 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ page  import = "java.util.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script language="javascript" type="text/javascript" src="datetimepick/datetimepicker.js"></script>
+<style type="text/css">
+body{
+	background-image:url(Images/image.jpg);
+	height: 1150px;
+	width: 1100px;
+}
+div.top{
+	background:#2E2E2E;
+	width:1260px;
+	height:100px;
+}
+div.title{
+	background-image:url(Images/title.jpg);
+	width:150px;
+	height:100px;
+}
+div.square{
+	background:#fff;
+	padding: 5em 0 0 3em;
+	margin-top: 6em;
+	margin-left: 10em;
+	width: 60em;
+	height: 50em;
+	opacity: 0.7;
+	filter:alpha(opacity=70);
+}
+
+</style>
+
+</head>
+<body>
+<div class="top">
+	<div class="title">
+	</div>
+</div>
+<div class="square">
+	<form action = "SearchIndexController">
+		<font size="4">Search: </font><input type="text" name="searchQuery" style="height: 70px; width: 300px"><br><br>
+		<font size="4">From Date:</font>
+		<input name="fromDate" id="fromDate"  maxlength="25" type="text" readonly="readonly"/>&nbsp;&nbsp;
+		<a href="javascript:NewCal('fromDate','ddmmyyyy','','')">
+			<img src="datetimepick/cal.gif"  width="16" height="16" border="0" alt="Pick a date"/>
+		</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<font size="4">To Date:</font>
+		<input name="toDate" id="toDate"  maxlength="25" type="text" readonly="readonly"/>&nbsp;&nbsp;
+		<a href="javascript:NewCal('toDate','ddmmyyyy','','')">
+			<img src="datetimepick/cal.gif"  width="16" height="16" border="0" alt="Pick a date"/>
+		</a><br><br><br>
+		<div align="center">
+			<input type="submit" value="Generate Report" style="height: 40px; width: 150px">
+		</div>
+		<input type="hidden" name = "fieldLen" value = "<%session.getAttribute("FieldLenArray"); %>">;
+	</form>
+</div>
+</body>
+</html>

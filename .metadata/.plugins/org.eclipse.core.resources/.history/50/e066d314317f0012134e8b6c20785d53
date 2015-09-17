@@ -1,0 +1,5 @@
+package com.cummins.project734.entity;
+
+public class ErrorReport {
+
+}

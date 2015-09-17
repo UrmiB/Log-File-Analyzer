@@ -1,0 +1,22 @@
+package com.cummins.project734.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SearchResult {
+	int frequency;
+	List<String> records = new ArrayList<String>();
+	public int getFrequency() {
+		return frequency;
+	}
+	public void setFrequency(int frequency) {
+		this.frequency = frequency;
+	}
+	public List<String> getRecords() {
+		return records;
+	}
+	public void setRecords(List<String> records) {
+		this.records = records;
+	}
+	
+}
